@@ -1,6 +1,6 @@
-import logging
-logger = logging.getLogger("test")
-logger.setLevel(logging.INFO)
+s = input("Please enter some text: ")
 
-print("Hello world!")
-logger.info("Hello world!")
+while s == "":
+    s = input("I actually need some text...: ")
+
+print("Thank you for entering some text. It was: " + s)
