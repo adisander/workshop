@@ -174,3 +174,100 @@
 <div style="page-break-after: always;"></div>
 
 ### Conditionals
+
+- ```python
+  if condition:
+      Führt den danach eingerückten code aus falls 'condition' nicht
+      als False ausgewertet wird. False sind:
+          False
+          None
+          null (0 oder 0.0)
+          leere iterierbare ("", (), [], {})
+          falsche gleichheiten (==, <, >, <=, >=)
+  
+  >>> if True:
+          # wird ausgeführt
+  >>> if "" or []:
+          # wird nicht ausgeführt
+  >>> n = 3
+  >>> if 1 < n < 5:
+          # wird ausgeführt
+  ```
+
+- ```python
+  else:
+      Führt den danach eingerückten code aus falls das if davor nicht
+      als True ausgewertet wurde. True ist alles was nicht False ist.
+  
+  >>> if False:
+          # wird nicht ausgeführt
+      else:
+          # wird ausgeführt
+  ```
+
+- ```python
+  elif condition:
+      Führt den danach eingerückten code aus falls das if davor nicht
+      als True ausgewertet wurde und 'condition' nicht False ist.
+  
+  >>> n = 3
+  >>> if n == 4:
+          # wird nicht ausgeführt
+      elif n == 3:
+          # wird ausgeführt
+      elif n == 3:
+          # wird nicht ausgeführt, da das Vorige if/elif schon war
+      else:
+          # wird nicht ausgeführt
+  ```
+
+<div style="page-break-after: always;"></div>
+
+### Conditionals (cont.)
+
+- ```python
+  match/case
+      findet den ersten passenden Fall und verwendet ihn
+  
+  >>> match (4, 0):
+          case (0, 0):
+              print("Ursprung")
+          case (0, y):
+              print(f"X-Achse, Y={y}")
+          case (x, 0):  # der in diesem Fall passende case
+              print(f"Y-Achse, X={x}")
+          case (x, y) if x == y:
+              print(f"X = Y = {x}")
+          case (x, y):  # wird übersprungen wegen vorigem case
+              print(f"X={x}, Y={y}")
+          case _:       # falls nichts gematched wurde
+              print("Kein 2D-Vektor")
+  ```
+
+- ```python
+  while condition:
+      Führt den danach eingerückten code so lange 'condition' nicht
+      als False ausgewertet wird.
+  
+  >>> while True:
+          # Endlosschleife
+  >>> n = 0
+  >>> while n < 3:
+          n += 1
+          print(n)
+  1
+  2
+  3
+  ```
+
+- ```python
+  for element in iterable:
+      Führt den danach eingerückten code einmal für jedes Element in
+      einer Iterierbaren aus.
+  
+  >>> for n in [1, 2, 4]:
+          print(n)
+  1
+  2
+  4
+  ```
